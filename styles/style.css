@@ -233,7 +233,7 @@ input[type="search"] {
 /* 데스크탑 메인 메뉴 */
 .menu {
   background: var(--secondary-color);
-  padding: var(--spacing-base), var(--spacing-lg);
+  padding: var(--spacing-base) var(--spacing-lg);
 }
 
 .menu__list {
@@ -244,11 +244,10 @@ input[type="search"] {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md);
 }
 
 .menu__link {
-  padding: var(--spacing-md), var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   color: var(--white);
   font-size: 1.2rem;
   font-weight: 700;
