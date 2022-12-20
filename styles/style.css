@@ -213,12 +213,51 @@ input[type="search"] {
 .board {
   /* background-color: lightsalmon; */
     grid-area: board;
+  display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+  }
+  
+  .board__title {
+    flex: 1 1 auto;
+  }
+  
+  .board__list {
+    order: 1;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+  
+  .board__item {
+    /* background-color: pink; */
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .board__link {
+    /* background-color: yellow; */
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* width: calc(100% - 6.25rem); */
 }
 
+.board__date {
+  /* 컨텐츠 크기만큼 지정 (날짜 줄바꿈 방지) */
+  flex: 0 0 auto;
+}
+
+.board__more {
+  padding-top: var(--spacing-sm);
+}
 /* 공통 추천 인기 사이트 */
 .favorite {
-  /* background-color: lightblue; */
-    grid-area: favorite;
+/* background-color: lightblue; */
+  grid-area: favorite;
 }
 
 /* 공통 트위터 */
@@ -337,6 +376,17 @@ input[type="search"] {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: "book" "news" "board" "favorite" "twitter";
+}
+/* 모바일 인기 사이트 */
+.favorite {
+  margin-top: var(--spacing-sm);
+}
+
+.favorite__link::after {
+  content: attr(data-tooltip);
+  color: var(--accent-favorite);
+  font-size: var(--text-sm);
+  margin-left: var(--spacing-xs);
 }
 }
 
